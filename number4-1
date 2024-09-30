@@ -1,0 +1,64 @@
+using System;
+using System.Collections.Generic;
+
+internal class Program
+{
+    private static void Main()
+    {
+        Dictionary<string, string> phoneBook = new Dictionary<string, string>();
+        string choice;
+
+        do
+        {
+            Console.WriteLine("Меню:");
+            Console.WriteLine("1. Добавить запись");
+            Console.WriteLine("2. Найти номер по имени");
+            Console.WriteLine("3. Вывести все записи");
+            Console.WriteLine("4. Выход");
+            Console.Write("Выберите опцию: ");
+            choice = Console.ReadLine();
+
+            switch (choice)
+            {
+                case "1":
+                    Console.Write("Введите имя: ");
+                    string name = Console.ReadLine();
+                    Console.Write("Введите номер телефона: ");
+                    string phoneNumber = Console.ReadLine();
+                    phoneBook[name] = phoneNumber;
+                    Console.WriteLine("Запись добавлена.");
+                    break;
+
+                case "2":
+                    Console.Write("Введите имя для поиска: ");
+                    name = Console.ReadLine();
+                    if (phoneBook.TryGetValue(name, out phoneNumber))
+                    {
+                        Console.WriteLine($"Телефонный номер для {name}: {phoneNumber}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Имя не найдено.");
+                    }
+                    break;
+
+                case "3":
+                    Console.WriteLine("Все записи:");
+                    foreach (var entry in phoneBook)
+                    {
+                        Console.WriteLine($"Имя: {entry.Key}, Номер: {entry.Value}");
+                    }
+                    break;
+
+                case "4":
+                    Console.WriteLine("Выход из программы.");
+                    break;
+
+                default:
+                    Console.WriteLine("Неверный выбор, попробуйте снова.");
+                    break;
+            }
+            Console.WriteLine();
+        } while (choice != "4");
+    }
+}
