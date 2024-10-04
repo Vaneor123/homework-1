@@ -4,7 +4,7 @@ using System.Security.Claims;
 internal class Program
 {
 
-    static int sh(int a)
+    static int f(int a)
     {
         if (a % 2 != 0)
         {
@@ -22,6 +22,6 @@ internal class Program
 
         int x = Convert.ToInt32(Console.ReadLine());
 
-        Console.WriteLine(sh(x));
+        Console.WriteLine(f(x));
     }
 }
