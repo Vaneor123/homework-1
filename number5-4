@@ -1,0 +1,28 @@
+using System.Security.AccessControl;
+using System.Security.Claims;
+
+internal class Program
+{
+    static int sh(int a)
+    {
+        if (a >= 100 & a < 1000)
+        {
+            int n = a % 10;
+            int b = a / 100;
+            int c = a / 10 % 10;
+            Console.WriteLine(n.ToString() + c.ToString() + b.ToString());
+            return a;
+        }
+        else
+        {
+            Console.WriteLine(a);
+            return a;
+        }
+    }
+    private static void Main(string[] args)
+    {
+        int x = int.Parse(Console.ReadLine());
+
+        sh(x);
+}
+}
