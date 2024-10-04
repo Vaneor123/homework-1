@@ -1,0 +1,26 @@
+using System.Security.AccessControl;
+using System.Security.Claims;
+
+internal class Program
+{
+    static double sh(double a, double b)
+    {
+        double c = Math.Sqrt(a * a + b * b);
+        Console.WriteLine(c);
+        double AB = double.Parse(Console.ReadLine());
+        double AC = double.Parse(Console.ReadLine());
+        double DC = double.Parse(Console.ReadLine());
+        double BC = Math.Sqrt(AB * AB + AC * AC);
+        double ABCD = AB + AC + DC + Math.Sqrt(BC * BC + DC * DC);
+        Console.WriteLine(ABCD);
+        return ABCD;
+    }
+    private static void Main(string[] args)
+    {
+        double a = int.Parse(Console.ReadLine());
+        double b = int.Parse(Console.ReadLine());
+        sh(a, b);
+
+
+    }
+}
