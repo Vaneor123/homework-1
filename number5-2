@@ -8,10 +8,12 @@ internal class Program
     {
         if (a % 5 == 0)
         {
+            Console.WriteLine("Кратно 5")
             return a / 5;
         }
         else
         {
+            Console.WriteLine("Некратно 5")
             return a += 1;
         }
     }
