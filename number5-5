@@ -3,7 +3,7 @@ using System.Security.Claims;
 
 internal class Program
 {
-    static double sh(double a, double b)
+    static double f(double a, double b)
     {
         double c = Math.Sqrt(a * a + b * b);
         Console.WriteLine(c);
@@ -19,7 +19,7 @@ internal class Program
     {
         double a = int.Parse(Console.ReadLine());
         double b = int.Parse(Console.ReadLine());
-        sh(a, b);
+        f(a, b);
 
 
     }
