@@ -3,10 +3,11 @@ using System.Security.Claims;
 
 internal class Program
 {
-    static int sh(int a)
+    static int f(int a)
     {
         if (a >= 100 & a < 1000)
         {
+            Console.WriteLine("Трехзначное число")
             int n = a % 10;
             int b = a / 100;
             int c = a / 10 % 10;
@@ -15,6 +16,7 @@ internal class Program
         }
         else
         {
+            Console.WriteLine("Другое число")
             Console.WriteLine(a);
             return a;
         }
@@ -23,6 +25,6 @@ internal class Program
     {
         int x = int.Parse(Console.ReadLine());
 
-        sh(x);
+        f(x);
 }
 }
